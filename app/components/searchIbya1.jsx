@@ -9,17 +9,27 @@ export default function SearchIbya1({getSearchResults}) {
 const [query,setQuery]=useState('');
 const [isLoading, setIsLoading] = useState(false);
 
-const handleSubmit=async(e)=>{
+const handleSubmit = async (e) => {
   e.preventDefault();
   setIsLoading(true);
-//const response = await fetch(`http://localhost:3000/api/shaka1/search1?query=${query}`);${process.env.NEXT_PUBLIC_API_SHAKA1_SEARCH_URL}?query=${query}
-const response = await fetch(`${process.env.NEXT_PUBLIC_API_SHAKA1_SEARCH_URL}?query=${query}`)
-console.log("queryUrl",response);
-const ibyangombwa1 = await response.json();
-console.log("esponse",ibyangombwa1);
- getSearchResults(ibyangombwa1);
- setIsLoading(false);
-}
+
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_SHAKA1_SEARCH_URL}?query=${query}`);
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status: ${response.status}`);
+    }
+
+    const ibyangombwa1 = await response.json();
+    console.log("Response JSON:", ibyangombwa1);
+    getSearchResults(ibyangombwa1);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
 
 
