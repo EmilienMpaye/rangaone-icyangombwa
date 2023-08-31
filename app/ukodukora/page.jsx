@@ -8,7 +8,7 @@ const Ukodukora = () => {
     <div className="flex flex-col flex-grow">
   <span className="block text-center  py-2">Murakoze kudusura!</span>
   <div>
-    <h1 className="text-xl font-bold mt-4 flex items-center justify-center">Urubuga ranga</h1>
+    <h1 className="text-xl font-bold mt-4 flex items-center justify-center">Urubuga Ruranga</h1>
     <p className="text-center py-2">
       Uru nurubuga ruranga rukanarangisha ibyangombwa byatakaye mu Rwanda.
       Aho uwataye icyangombwa yuzuza form iri ahatangira.
