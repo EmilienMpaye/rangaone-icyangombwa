@@ -36,12 +36,12 @@ export async function GET(request) {
         const response = await fetch(urlWithCacheBuster , {
 
       method: 'GET',
-      headers: [
-        { key: "Access-Control-Allow-Credentials", value: "true" },
-        { key: "Access-Control-Allow-Origin", value: "*" }, // Replace with your allowed origins
-        { key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT" },
-        { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
-    ]
+      headers: {
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": "*", // Replace with your allowed origins
+        "Access-Control-Allow-Methods": "GET,DELETE,PATCH,POST,PUT",
+        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+    }
     
         });
         console.log("shaka1 search1 route",response);
@@ -59,7 +59,9 @@ export async function GET(request) {
         );
     } catch (error) {
         console.error("Error fetching data:", error);
-        return NextResponse.error("An error occurred while fetching data.", 500);
+        return NextResponse.json({
+            error: "An error occurred while fetching data."
+        }, 500);
     }
 }
 
