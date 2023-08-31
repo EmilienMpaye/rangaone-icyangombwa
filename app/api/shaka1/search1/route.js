@@ -34,11 +34,12 @@ export async function GET(request) {
          const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     
         const response = await fetch(urlWithCacheBuster , {
-
+     cache: 'no-store' ,
       method: 'GET',
       headers: {
+        'Content-Type': 'application/json',
         "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Origin": "http://localhost:3000", // Replace with your allowed origins
+        "Access-Control-Allow-Origin": "*", // Replace with your allowed origins
         "Access-Control-Allow-Methods": "GET,DELETE,PATCH,POST,PUT",
         "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
     }
