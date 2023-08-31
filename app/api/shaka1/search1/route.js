@@ -36,13 +36,13 @@ export async function GET(request) {
         const response = await fetch(urlWithCacheBuster , {
 
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-               "Access-Control-Allow-Credentials": "true" ,
-               "Access-Control-Allow-Origin": "https://rangaone-icyangombwa-4qpnpqfzn-emilienmpaye.vercel.app", // Replace with your allowed origins
-               "Access-Control-Allow-Methods": "GET,DELETE,PATCH,POST,PUT" ,
-              "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" ,    
-      }
+      headers: [
+        { key: "Access-Control-Allow-Credentials", value: "true" },
+        { key: "Access-Control-Allow-Origin", value: "*" }, // Replace with your allowed origins
+        { key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT" },
+        { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
+    ]
+    
         });
         console.log("shaka1 search1 route",response);
         const ibyangombwa1 = await response.json();
