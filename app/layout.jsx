@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import Header from './components/header';
+import Header from './components/Header';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 //import VerticalHandle from './components/scrollball';
