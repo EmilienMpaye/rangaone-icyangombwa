@@ -1,0 +1,693 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'tailwindcss/tailwind.css';
+/* Update this line to include CSS nesting plugin */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+
+html {
+  height: 100%;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal overflow */
+  height: 100%;
+  scrollbar-width: thin; /* Set the width of the scrollbar */
+ 
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+  overflow: hidden; 
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+html::-webkit-scrollbar-thumb{
+  background-color: rgb(172, 209, 112);
+}
+html::-webkit-scrollbar-track{
+  background-color: rgb(122, 170, 156);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.wrapper {
+  height: 100%;
+
+}
+.footer {
+  height: 15%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: silver;
+}
+.header {
+  height: 15%;
+}
+.content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+
+
+.main-container {
+  max-width: 1400px;
+  margin: auto;
+  width: 100%;
+}
+.custom-overflow {
+  width: 100%;
+   /* Set the desired width for the flex container */
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.layout {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.main {
+  width: 100vw;
+  flex-grow: 1;
+  min-height: calc(100vh - 13vh); /* Subtract the height of the footer from the total viewport height */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 0px 4px 0px 4px;
+  pointer-events: none;
+  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+}
+
+/* .main:before {
+  background: radial-gradient(circle, rgba(20, 221, 194, 0) 0, #aa298a88 100%);
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+} */
+/* 
+.main:after {
+  content: "";
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: invert(1);
+} */
+
+ .gradient {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      rgb(84, 190, 107) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, rgb(143, 173, 32) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, rgb(168, 110, 9) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, rgb(221, 190, 16) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, rgb(212, 45, 93) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
+} 
+
+ 
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .flex-col-lg {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.break-words {
+  display: block;
+  margin-top: 0.5em;
+}
+/* CSS for the footer */
+.footer-container {
+  background-color: #6d9c94;
+  padding: 10px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  height: 20vh;
+  /* position: sticky; /* or position: fixed */
+  /* bottom: 0;
+  left: 0;
+  right: 0; 
+  Remove the right: 0; property 
+  /* right: 0; */
+  /* Remove the position: bottom; property */
+   position: bottom; 
+  /* Add this line to make the footer behave normally in the document flow */
+}
+
+
+.footer-container .icons{
+  font-size: 30px;
+  display: flex;
+  gap: 10px;
+}
+ .marquee-text{
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px 0px;
+  color: #3425c4;
+}
+.marquee {
+  /* position: relative;
+  height: 210px;
+  width: 100%;
+  
+  overflow-x: hidden; */
+  white-space: nowrap;
+  overflow-x: auto;
+.marquee {
+  /* position: relative;
+  height: 210px;
+  width: 100%;
+  overflow-x: hidden; */
+  white-space: nowrap;
+  overflow-x: auto;
+
+}
+.marquee:hover {
+  overflow-x: auto;
+}
+}
+.marquee:hover {
+  overflow-x: auto;
+}
+
+.track {
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
+  width: 100%;
+}
+.track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+} 
+.maylike{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+@media (max-width: 600px) {
+  .maylike.track {
+    flex-direction: row;
+    max-height: 200px; /* Adjust the height as needed */
+    overflow-x: auto;
+  }
+}
+@media (max-width: 767px) and (max-width:400px) {
+  .maylike {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .maylike:hover {
+    overflow-x: auto;
+  }
+}
+@media (max-width: 279px) {
+  .maylike {
+    flex-direction: row;
+  }
+
+}
+
+/* On small screens (max-width: 767px) */
+/* Medium and larger screens (768px and above) */
+@media (min-width: 768px) {
+  .maylike1 {
+    flex-direction: row;
+  }
+}
+
+/* Screens between 70px and 400px (inclusive) */
+@media (min-width: 20px) and (max-width: 400px) {
+  .maylike1 {
+    flex-direction: row;
+  }
+}
+/* On very small screens */
+@media (max-width: 479px) {
+  .maylike1 {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .maylike1 > div {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+
+@media (max-width: 78px) {
+  .flex-1 {
+    width: 70%;
+  }
+}
+.acq{
+  text-decoration: none;
+  color: rgb(221, 219, 90);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+.acq:hover{
+  color: rgb(255, 17, 0);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.bg-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(
+    230deg,
+    #5939e6 0%,
+    #5939e6 47.3%,
+    #b19f3c 48%,
+    #d6ba1a 75%,
+    #12c54e 77.5%,
+    #12c54e 100%
+  );
+}
+.bg-black-gradient-2 {
+  background: linear-gradient(
+    -168.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px; /* Adjust the margin as needed */
+}
+
+.arrow-icon {
+  transform: rotate(0deg); /* By default, keep the arrow icon in its original direction */
+  color: black;
+}
+
+@media (max-width: 499px) {
+  .arrow-icon {
+    transform: rotate(0deg); /* On small screens, keep the arrow icon in its original direction */
+    color: black;
+  }
+}
+@media (min-width: 500px) and (max-width: 968px) {
+  .arrow-icon {
+    transform: rotate(0deg); /* On screens between 500px and 767px, rotate the arrow icon to the right */
+    color: rgba(3, 3, 3, 0.884);
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 3700px) {
+  .arrow-icon {
+    transform: rotate(-90deg); /* On large screens (min-width: 768px), rotate the arrow icon to the left */
+    color: rgba(5, 5, 5, 0.808);
+    margin-left: 30px;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  body {
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  body {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color:rgb(72, 104, 117); ;
+}
+.loading-spinner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container > div {
+  width: 30%;
+  background-color: rgb(115, 120, 172);
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .container > div {
+    width: 48%; /* You can adjust the width as per your requirement for smaller screens */
+    margin-bottom: 16px;
+  }
+}
+
+
+
+
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container1 > div {
+  width: 20%;
+  height: 80%;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(112, 124, 101, 0.1);
+  padding: 16px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .container1 {
+    flex-wrap: wrap;
+  }
+
+  .container1 > div {
+    width: 38%;
+     /* You can adjust the width as per your requirement for smaller screens */
+    margin-bottom: 16px;
+  }
+}
+
+/* // */
+
+.container2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container2 > div {
+  flex-basis: 40%;
+  background-color: rgb(98, 107, 189);
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+}
+
+/* Media Query for small screens */
+@media (max-width: 499px) {
+  .container2 {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container2 > div {
+    flex-basis: calc(100% - 32px);
+    margin-bottom: 16px;
+    margin-right: 1px;
+    margin-left: 0;
+  }
+}
+
+/* Media Query for medium screens */
+@media (min-width:500px) and (max-width:1023px) {
+    .container2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:center;
+    }
+
+    .container2 > div {
+        flex-basis: calc(50% - 16px);
+        margin-bottom:16px;
+        margin-right:7px;
+        margin-left:6px;
+    }
+
+    .container2 > div:nth-child(2n) {
+        margin-right:0;
+    }
+}
+
+/* Media Query for large screens */
+@media (min-width:1024px) and (max-width:1439px) {
+    .container2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:center;
+    }
+
+    .container2 > div {
+        flex-basis: calc(33.33% - 20px);
+        margin-bottom:20px;
+        margin-right:0px;
+        margin-left:0px;
+    }
+    .container2 > div {
+      white-space: normal;
+    }
+
+    .container2 > div:nth-child(3n) {
+        margin-right:0;
+    }
+}
+
+/* Media Query for extra-large screens */
+@media (min-width:1440px) {
+    .container2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:center;
+    }
+
+    .container2 > div {
+        flex-basis: calc(33.33% - 20px);
+        margin-bottom:20px;
+        margin-right:20px;
+        margin-left:20px;
+    }
+
+    .container2 > div:nth-child(3n) {
+        margin-right:0;
+    }
+}
+
+/* styles.css */
+/* CSS for the outer scrollbar container */
+.vertical-scrollbar-outer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  background-color: white;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* CSS for the inner scrollbar */
+.vertical-scrollbar-inner {
+  position: relative;
+  width: 6px;
+  background-color: rgb(134, 129, 129);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* CSS for the up arrow indicator */
+.vertical-scrollbar-inner::before {
+  content: "\25B2";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* CSS for the down arrow indicator */
+.vertical-scrollbar-inner::after {
+  content: "\25BC";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Keep the arrow indicators fixed at the start and end of the scrollbar line */
+.vertical-scrollbar-inner::before,
+.vertical-scrollbar-inner::after {
+  position: absolute;
+}
+
+/* Position the arrow indicators at the start and end of the scrollbar line */
+.vertical-scrollbar-inner::before {
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.vertical-scrollbar-inner::after {
+  top: auto;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+
+/* CSS for larger screens (md breakpoint and above) */
+/* CSS for larger screens (md breakpoint and above) */
+/* CSS for larger screens (md breakpoint and above) */
+
+@media (min-width: 768px) {
+  .maylike1 {
+    flex-direction: row;
+  }
+}
+/* Default input width for larger screens */
+/* Default input width for all screens */
+input[type="file"] {
+  width: 70%; /* Adjust this value as needed */
+}
+
+/* Media queries for adjusting input width */
+@media screen and (max-width: 600px) {
+  input[type="file"] {
+    width: 40%; /* Keep the same width for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  input[type="file"] {
+    width: 30%; /* Keep the same width for middle screens */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  input[type="file"] {
+    width: 30%; /* Keep the same width for larger screens */
+  }
+}
+
+/* Additional media query for very small screens */
+@media screen and (max-width: 300px) and(max-width:500px) {
+  input[type="file"] {
+    width: 50%; /* Keep the same width for very small screens */
+  }
+}
