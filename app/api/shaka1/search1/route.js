@@ -37,7 +37,11 @@ export async function GET(request) {
 
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+               "Access-Control-Allow-Credentials": "true" ,
+               "Access-Control-Allow-Origin": "https://rangaone-icyangombwa-4qpnpqfzn-emilienmpaye.vercel.app", // Replace with your allowed origins
+               "Access-Control-Allow-Methods": "GET,DELETE,PATCH,POST,PUT" ,
+              "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" ,    
       }
         });
         console.log("shaka1 search1 route",response);
