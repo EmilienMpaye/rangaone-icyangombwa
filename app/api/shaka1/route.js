@@ -31,6 +31,7 @@ export async function GET() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
+        
       }
     });
     console.log("shaka1  route",response);
