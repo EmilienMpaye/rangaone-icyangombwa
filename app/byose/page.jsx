@@ -6,6 +6,7 @@ import SearchIbya1 from "@app/components/searchIbya1";
 import Loadingl from "@app/components/loading";
 
 const shaka1ApiUrl = process.env.NEXT_PUBLIC_API_SHAKA1_URL ;
+
 //NEXT_PUBLIC_API_SHAKA1_URL=http://localhost:3000/api/shaka1
 
 export const dynamic="force-dynamic";
@@ -17,7 +18,7 @@ const Popup =  () => {
 useEffect(() => {
   const getIbyangombwa = async () => {
     try {
-      const response = await fetch("api/shaka1");
+      const response = await fetch("https://rangaone-icyangombwa.vercel.app/api/shaka1");
 
       const icyangombwa1 = await response.json();
       setIcyangombwa1(icyangombwa1.todos1);
