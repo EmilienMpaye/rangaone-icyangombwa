@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 
+  server : {
+    proxy :{
+      '/api':'http://localhost:3000'
+    }
+  },
     experimental: {
         serverActions: true
       },
@@ -18,6 +23,9 @@ const nextConfig = {
           }
         ];
       }
+    
+       
+  
     };
     
     module.exports = nextConfig;
