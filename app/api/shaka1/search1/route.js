@@ -30,16 +30,17 @@ const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
 
 export async function GET(request) {
     try {
-        //const cacheBuster = Date.now();
-         //const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
+        const cacheBuster = Date.now();
+         const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     
-        const response = await fetch(apishaka1 , {
-     cache: 'no-store' ,   
+        const response = await fetch(`api/home1?cacheBuster=${cacheBuster}`, {
+            cache: 'no-store' ,
+      
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Origin": "'http://localhost:3000", // Replace with your allowed origins
+        "Access-Control-Allow-Origin": "http://localhost:3000", // Replace with your allowed origins
         "Access-Control-Allow-Methods": "GET,DELETE,PATCH,POST,PUT",
         "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
              }

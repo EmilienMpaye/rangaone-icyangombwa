@@ -26,6 +26,7 @@ export async function GET() {
   const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
     //const cacheBuster = Date.now();//API_HOME1_CACHEBUSTER_URL=https://rangaone-icyangombwa.vercel.app/api/home1?cacheBuster=
     //const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
+    console.log("shaka1  api",apishaka1);
     const response = await fetch(apishaka1, {
         cache: 'no-store' ,
       
