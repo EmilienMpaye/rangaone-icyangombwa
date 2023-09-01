@@ -24,15 +24,16 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
-    const cacheBuster = Date.now();//API_HOME1_CACHEBUSTER_URL=https://rangaone-icyangombwa.vercel.app/api/home1?cacheBuster=
-    const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
-    const response = await fetch(urlWithCacheBuster, {
+    //const cacheBuster = Date.now();//API_HOME1_CACHEBUSTER_URL=https://rangaone-icyangombwa.vercel.app/api/home1?cacheBuster=
+    //const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
+    const response = await fetch("api/shaka1", {
         cache: 'no-store' ,
+        mode: 'no-cors',
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
                "Access-Control-Allow-Credentials": "true" ,
-               "Access-Control-Allow-Origin": "https://rangaone-icyangombwa.vercel.app/api/shaka1", // Replace with your allowed origins
+               "Access-Control-Allow-Origin": "https://rangaone-icyangombwa.vercel.app", // Replace with your allowed origins
                "Access-Control-Allow-Methods": "GET,DELETE,PATCH,POST,PUT" ,
               "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" ,    
       }
