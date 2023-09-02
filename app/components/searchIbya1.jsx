@@ -14,10 +14,11 @@ const handleSubmit = async (e) => {
   setIsLoading(true);
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_SHAKA1_SEARCH_URL}?query=${query}`);
-
+    //const response = await fetch(`${process.env.NEXT_PUBLIC_API_SHAKA1_SEARCH_URL}?query=${query}`);
+    const response = await fetch(`http://localhost:3000/api/shaka1/search1?query=${query}`)
+            console.log('res ivyang',response);
     if (!response.ok) {
-      throw new Error(`Request failed with status: ${response.status}`);
+      throw new Error(`Request failed with status: `);
     }
 
     const ibyangombwa1 = await response.json();

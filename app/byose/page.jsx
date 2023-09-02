@@ -6,7 +6,6 @@ import SearchIbya1 from "@app/components/searchIbya1";
 import Loadingl from "@app/components/loading";
 
 const shaka1ApiUrl = process.env.NEXT_PUBLIC_API_SHAKA1_URL ;
-
 //NEXT_PUBLIC_API_SHAKA1_URL=http://localhost:3000/api/shaka1
 
 export const dynamic="force-dynamic";
@@ -18,9 +17,9 @@ const Popup =  () => {
 useEffect(() => {
   const getIbyangombwa = async () => {
     try {
-      const response = await fetch(shaka1ApiUrl);
-    
+      const response = await fetch(shaka1ApiUrl);   
       const icyangombwa1 = await response.json();
+      console.log("icyangombwa1",icyangombwa1)
       setIcyangombwa1(icyangombwa1.todos1);
       SetIsLoading(false);
       console.log("todos", icyangombwa1.todos1); // Move the console.log here
