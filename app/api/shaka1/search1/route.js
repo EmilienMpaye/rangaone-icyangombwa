@@ -8,7 +8,14 @@ export async function GET(request) {
         const cacheBuster = Date.now();
          const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     
-        const response = await fetch(urlWithCacheBuster )
+        const response = await fetch(urlWithCacheBuster ,{
+            cache: 'no-store' ,
+            method:"GET",
+            headers:{
+                'Content-Type': 'application/json',
+                
+            }
+        })
 
     
         console.log("shaka1 search1 route",response);
