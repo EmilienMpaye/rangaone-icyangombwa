@@ -45,7 +45,8 @@ export const dynamic = "force-dynamic";
  
 
 
-export async function GET() {
+export async function GET( request) {
+  const origin =request.headers.get('origin');
   const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
     const cacheBuster = Date.now();
     const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
@@ -54,6 +55,7 @@ export async function GET() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
+
       }
     });
     console.log("shaka1  route",response);
@@ -63,5 +65,12 @@ export async function GET() {
     return NextResponse .json({
             todos1,
             revalidate:5
-    });
+    },
+    {
+      headers:{
+          'Content-Type': 'application/json',
+           "Access-Control-Allow-Credentials": "true",
+           "Access-Control-Allow-Origin": origin || "*",   
+      }
+  });
   }

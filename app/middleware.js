@@ -1,6 +1,6 @@
 import {  NextResponse } from "next/server";
 
-const allowedOrigins = process.env.NODE_ENV === 'production'? ['https://rangaone-icyangombwa.vercel.app','https://www.google.com']  : ['http://localhost:3000','http://localhost://3000/api/shaka1/search1',"https://www.google.com"];
+const allowedOrigins = process.env.NODE_ENV === 'production'? ['https://rangaone-icyangombwa.vercel.app','https://www.google.com']  : ['http://localhost:3000','http://localhost://3000/api/shaka1',"https://www.google.com"];
 
 export function middleware(request){
 const origin = request.headers.get('origin');
