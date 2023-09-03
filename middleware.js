@@ -10,7 +10,7 @@ console.log(request.method)
     console.log(request.url)
 
 
-if(request.headers.has('origin')  && !allowedOrigins.includes(origin)){
+if(origin  && !allowedOrigins.includes(origin)){
     return new NextResponse(null, {
         status:404,
         statusText:"Bad Request",

@@ -9,7 +9,7 @@ export async function GET(context){
   
   // Add headers to the response.
   response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app');
-  
+  console.log("shaka1  route",response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app'));
   return response;
    //return NextResponse.json(todos1);
    

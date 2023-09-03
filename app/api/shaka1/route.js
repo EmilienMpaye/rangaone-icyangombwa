@@ -52,26 +52,24 @@ export async function GET( request) {
     const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     const response = await fetch(urlWithCacheBuster, {
         cache: 'no-store' ,
-      method: 'GET,POST',
+      method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
-
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": origin || "*", 
       }
     });
     console.log("shaka1  route",response);
-    response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app');
     const {todos1} = await response.json();
     console.log("rour",todos1);
   
     return NextResponse .json({
             todos1,
             revalidate:5
-    },
-    {
-                headers:{
-                    'Content-Type': 'application/json',
-                     "Access-Control-Allow-Credentials": "true",
-                     "Access-Control-Allow-Origin": origin || "*",   
-                }
-            });
+    }
+    ,{  headers: {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": origin || "*", 
+      }});
   }

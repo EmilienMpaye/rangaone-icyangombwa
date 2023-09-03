@@ -9,17 +9,8 @@ export async function GET(request) {
          const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     
         const response = await fetch(urlWithCacheBuster)
-        //      ,{
-            
-        //     method:"GET,POST",
-        //     headers:{
-        //         'Content-Type': 'application/json',
-        //         "Access-Control-Allow-Credentials": "true",
-        //         "Access-Control-Allow-Origin": origin || "*",  
-        //     }
-        // })
-
-    
+       
+      
         console.log("shaka1 search1 route",response);
         const ibyangombwa1 = await response.json();
 
@@ -30,16 +21,21 @@ export async function GET(request) {
             return todo.title.toLowerCase().includes(query.toLowerCase()) || todo.izina.toLowerCase().includes(query.toLowerCase());
         });
   console.log("filteredtodo1",filteredIbyangombwa1);
-        return NextResponse.json(
+
+  return NextResponse.json(
             filteredIbyangombwa1 
             ,{
                 headers:{
                     'Content-Type': 'application/json',
                      "Access-Control-Allow-Credentials": "true",
-                     "Access-Control-Allow-Origin": origin || "*",   
+                     "Access-Control-Allow-Origin": origin ,   
                 }
+               
             }
+            
+            
         );
+      
     } catch (error) {
         console.error("Error fetching data:", error);
         return NextResponse.error("An error occurred while fetching data.", 500);
