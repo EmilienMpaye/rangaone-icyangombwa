@@ -15,7 +15,7 @@ const handleSubmit = async (e) => {
 
   try {
     //const response = await fetch(`${process.env.NEXT_PUBLIC_API_SHAKA1_SEARCH_URL}?query=${query}`);
-    const response = await fetch(`api/shaka1/search1?query=${query}`)
+    const response = await fetch(`/api/shaka1/search1?query=${query}`)
             console.log('res ivyang',response);
     if (!response.ok) {
       throw new Error(`Request failed with status: `);
