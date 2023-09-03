@@ -51,13 +51,12 @@ export async function GET( request) {
     const cacheBuster = Date.now();
     const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     const response = await fetch(urlWithCacheBuster, {
-        cache: 'no-store' ,
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Origin": origin || "*", 
-      }
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   "Access-Control-Allow-Credentials": "true",
+      //   "Access-Control-Allow-Origin": origin || "*", 
+      // }
     });
     console.log("shaka1  route",response);
     const {todos1} = await response.json();
