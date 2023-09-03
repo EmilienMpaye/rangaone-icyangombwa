@@ -8,14 +8,16 @@ export async function GET(request) {
         const cacheBuster = Date.now();
          const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     
-        const response = await fetch(urlWithCacheBuster ,{
-            cache: 'no-store' ,
-            method:"GET",
-            headers:{
-                'Content-Type': 'application/json',
-                
-            }
-        })
+        const response = await fetch(urlWithCacheBuster)
+        //      ,{
+            
+        //     method:"GET,POST",
+        //     headers:{
+        //         'Content-Type': 'application/json',
+        //         "Access-Control-Allow-Credentials": "true",
+        //         "Access-Control-Allow-Origin": origin || "*",  
+        //     }
+        // })
 
     
         console.log("shaka1 search1 route",response);
@@ -29,7 +31,8 @@ export async function GET(request) {
         });
   console.log("filteredtodo1",filteredIbyangombwa1);
         return NextResponse.json(
-            filteredIbyangombwa1 ,{
+            filteredIbyangombwa1 
+            ,{
                 headers:{
                     'Content-Type': 'application/json',
                      "Access-Control-Allow-Credentials": "true",
