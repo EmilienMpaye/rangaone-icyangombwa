@@ -17,9 +17,11 @@ const Popup =  () => {
 useEffect(() => {
   const getIbyangombwa = async () => {
     try {
+      
       const response = await fetch('/api/shaka1');   
+      console.log("icyangombwa1",response)
       const icyangombwa1 = await response.json();
-      console.log("icyangombwa1",icyangombwa1)
+      
       setIcyangombwa1(icyangombwa1.todos1);
       SetIsLoading(false);
       console.log("todos", icyangombwa1.todos1); // Move the console.log here

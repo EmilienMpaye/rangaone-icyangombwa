@@ -52,11 +52,11 @@ export async function GET( request) {
     const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     const response = await fetch(urlWithCacheBuster, {
       method: 'GET',
-      // headers: {
+       headers: {
       //   'Content-Type': 'application/json',
-      //   "Access-Control-Allow-Credentials": "true",
-      //   "Access-Control-Allow-Origin": origin || "*", 
-      // }
+         "Access-Control-Allow-Credentials": "true",
+         "Access-Control-Allow-Origin":  "*", 
+       }
     });
     console.log("shaka1  route",response);
     const {todos1} = await response.json();
@@ -65,10 +65,10 @@ export async function GET( request) {
     return NextResponse .json({
             todos1,
             revalidate:5
-    }
-    ,{  headers: {
-        'Content-Type': 'application/json',
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Origin": origin || "*", 
-      }});
+    })
+    // ,{  headers: {
+    //     'Content-Type': 'application/json',
+    //     "Access-Control-Allow-Credentials": "true",
+    //     "Access-Control-Allow-Origin": origin || "*", 
+    //   }});
   }
