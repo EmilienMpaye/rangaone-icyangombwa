@@ -59,6 +59,7 @@ export async function GET( request) {
       }
     });
     console.log("shaka1  route",response);
+    response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app');
     const {todos1} = await response.json();
     console.log("rour",todos1);
   
