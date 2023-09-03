@@ -51,10 +51,11 @@ export async function GET( request) {
     const cacheBuster = Date.now();
     const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     const response = await fetch(urlWithCacheBuster, {
-      method: 'GET',
+        cache: 'no-store' ,
+      method: 'GET,POST',
       headers: {
-        'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "https://rangaone-icyangombwa.vercel.app",
+        'Content-Type': 'application/json'
+
       }
     });
     console.log("shaka1  route",response);
@@ -66,10 +67,10 @@ export async function GET( request) {
             revalidate:5
     },
     {
-      headers:{
-          'Content-Type': 'application/json',
-           "Access-Control-Allow-Credentials": "true",
-           "Access-Control-Allow-Origin":  "https://rangaone-icyangombwa.vercel.app",   
-      }
-  });
+                headers:{
+                    'Content-Type': 'application/json',
+                     "Access-Control-Allow-Credentials": "true",
+                     "Access-Control-Allow-Origin": origin || "*",   
+                }
+            });
   }
