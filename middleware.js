@@ -15,7 +15,8 @@ if(origin  && !allowedOrigins.includes(origin)){
         status:404,
         statusText:"Bad Request",
        headers:{
-        'Content-Type':'text/plain'
+        'Content-Type':'text/plain',
+        'Access-Control-Allow-Origin': '*',
        }
     })
 }
