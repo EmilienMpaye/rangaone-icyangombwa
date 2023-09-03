@@ -55,7 +55,7 @@ export async function GET( request) {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": origin || "https://rangaone-icyangombwa.vercel.app",
+        "Access-Control-Allow-Origin": origin || "*",
       }
     });
     console.log("shaka1  route",response);
