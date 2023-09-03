@@ -46,29 +46,22 @@ export const dynamic = "force-dynamic";
 
 
 export async function GET( request) {
-  const origin =request.headers.get('origin');
+  //const origin =request.headers.get('origin');
   const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
     const cacheBuster = Date.now();
     const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
-    const response = await fetch(urlWithCacheBuster, {
-      method: 'GET',
-       headers: {
-      //   'Content-Type': 'application/json',
-         "Access-Control-Allow-Credentials": "true",
-         "Access-Control-Allow-Origin":  "*", 
-       }
-    });
+    const response = await fetch(urlWithCacheBuster);
     console.log("shaka1  route",response);
     const {todos1} = await response.json();
     console.log("rour",todos1);
   
-    return NextResponse .json({
-            todos1,
-            revalidate:5
-    })
+  const data = NextResponse.json({todos1,revalidate:5})
+   data.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app')
+   
+    return data 
     // ,{  headers: {
     //     'Content-Type': 'application/json',
     //     "Access-Control-Allow-Credentials": "true",
-    //     "Access-Control-Allow-Origin": origin || "*", 
-    //   }});
+    //     "Access-Control-Allow-Origin": origin || "https://rangaone-icyangombwa.vercel.app", 
+    //   }};
   }
