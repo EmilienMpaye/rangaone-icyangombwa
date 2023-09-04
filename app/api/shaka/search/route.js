@@ -5,17 +5,12 @@ const apisearch = process.env.API_HOME_CACHEBUSTER_URL;
 
 
 export async function GET(request) {
+    const origin =request.headers.get('origin');
     try {
         const cacheBuster = Date.now();
         const urlWithCacheBuster = `${apisearch}${cacheBuster}`;
 
-        const response = await fetch(urlWithCacheBuster , {
-
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-        });
+        const response = await fetch(urlWithCacheBuster);
     
         const ibyangombwa = await response.json();
 
@@ -27,7 +22,14 @@ export async function GET(request) {
         });
   console.log("filteredtodo",filteredIbyangombwa);
         return NextResponse.json(
-            filteredIbyangombwa
+            filteredIbyangombwa   ,{
+                headers:{
+                    'Content-Type': 'application/json',
+                     "Access-Control-Allow-Credentials": "true",
+                     "Access-Control-Allow-Origin": origin ||"*" ,   
+                }
+               
+            }
         );
     } catch (error) {
         console.error("Error fetching data:", error);
