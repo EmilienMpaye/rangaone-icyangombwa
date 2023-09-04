@@ -24,9 +24,5 @@ export async function GET( request) {
    data.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app')
    
     return data 
-    // ,{  headers: {
-    //     'Content-Type': 'application/json',
-    //     "Access-Control-Allow-Credentials": "true",
-    //     "Access-Control-Allow-Origin": origin || "https://rangaone-icyangombwa.vercel.app", 
-    //   }};
+   
   }
