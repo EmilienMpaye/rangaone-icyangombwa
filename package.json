@@ -12,6 +12,7 @@
     "@emotion/react": "^11.11.1",
     "@heroicons/react": "^2.0.18",
     "autoprefixer": "10.4.15",
+    "cloudinary": "^1.40.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "mongodb": "^6.0.0",
