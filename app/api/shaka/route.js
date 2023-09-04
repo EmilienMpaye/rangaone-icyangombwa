@@ -19,7 +19,7 @@ export async function GET() {
       
     const {todos} = await response.json();
     console.log("rour",todos);
-    const data = NextResponse.json({todos,revalidate:5})
+    const data = NextResponse.json({todos,revalidate:2})
     data.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app')
     
      return data 

@@ -20,7 +20,7 @@ const [isLoading, setIsLoading] = useState(true);
       const getIbyangombwa = async () => {
        
         try {
-          const response = await fetch("/api/shaka");
+          const response = await fetch(`/api/shaka?cacheBuster=${Date.now()}`);
           console.log("shakaApiUrl",response);
           const icyangombwa = await response.json();
           setIcyangombwa(icyangombwa.todos);
