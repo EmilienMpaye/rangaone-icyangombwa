@@ -18,7 +18,7 @@ useEffect(() => {
   const getIbyangombwa = async () => {
     try {
       
-      const response = await fetch('/api/shaka1?cacheBuster=${Date.now()}');   
+      const response = await fetch(`/api/shaka1?cacheBuster=${Date.now()}`);   
       console.log("icyangombwa1",response)
       const icyangombwa1 = await response.json();
       
