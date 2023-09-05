@@ -15,7 +15,12 @@ export async function GET( request) {
   const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
     const cacheBuster = Date.now();
     const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
-    const response = await fetch(urlWithCacheBuster);
+    const response = await fetch(urlWithCacheBuster, {
+      next: {
+        cache: 'no-cache',
+        revalidate: 1
+      }
+    });
     console.log("shaka1  route",response);
     const {todos1} = await response.json();
     console.log("rour",todos1);

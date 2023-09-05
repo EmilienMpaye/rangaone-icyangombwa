@@ -36,7 +36,7 @@ const res = await fetch(`${process.env.NEXT_PUBLIC_DELETE_API_HOME1_URL}${id} `,
 }
 
 export default function Delete1({ todo }) {
-  console.log(todo);
+  //console.log(todo);
   const router = useRouter();
   const [showToast, setShowToast] = useState(false);
   const handleDelete = () => {

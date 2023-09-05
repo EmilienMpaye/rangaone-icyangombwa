@@ -31,9 +31,9 @@ export const dynamic = 'force-dynamic';
 
 const Home = async () => {
  const { todos} = await getData();
- console.log("home tooooooooooooooooooooooooooooooooooooodo",todos)
+
  const {todos1} = await getAllTodos1();
-  console.log('home1 tooooooooooooooooooooooooooooooooooooodo',todos1);
+  
 
  
   return (

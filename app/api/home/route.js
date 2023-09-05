@@ -5,9 +5,9 @@ export async function GET(context){
    const todos = await getAllTodos();
 
    const response = NextResponse.json(todos,{
-      
-        cache: 'no-cache',
-        revalidate: 0
+      next: {
+        cache: 'no-cache'
+      }
     });
     
   response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app');
