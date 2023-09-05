@@ -1,5 +1,5 @@
  import {NextResponse} from "next/server";
- export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 // //API_HOME_CACHEBUSTER_URL=http://localhost:3000/api/home?cacheBuster=
       
 export async function GET() {
