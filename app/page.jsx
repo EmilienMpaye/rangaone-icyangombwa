@@ -19,16 +19,18 @@ const homeApiUrl = process.env.API_HOME_URL;
 
 export const dynamic = 'force-dynamic';
  async function getData(){
- const res = await fetch(homeApiUrl);
+  //http://localhost:3000/api/home
+  const cacheBuster =Date.now();
+ const res = await fetch(`${homeApiUrl}??cacheBuster=${cacheBuster}`);
    await wait(5);
    return res.json();
  }
 
 const Home = async () => {
  const { todos} = await getData();
- 
+ console.log("home tooooooooooooooooooooooooooooooooooooodo",todos)
  const {todos1} = await getAllTodos1();
-  console.log(todos1);
+  console.log('home1 tooooooooooooooooooooooooooooooooooooodo',todos1);
 
  
   return (

@@ -6,7 +6,7 @@ export async function GET(context){
    const todos1 = await getAllTodos1();
 
    const response = NextResponse.json(todos1);
-  
+   console.log("home1 data",response)
   // Add headers to the response.
   response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app');
  
