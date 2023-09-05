@@ -7,7 +7,7 @@ export async function GET(context){
    const response = NextResponse.json(todos,{
       next: {
         cache: 'no-cache',
-        revalidate: 5
+        revalidate: 0
       }
     });
     

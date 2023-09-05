@@ -4,12 +4,12 @@
         
 export async function GET() {
   const apisearch = process.env.API_HOME_CACHEBUSTER_URL;
-  const cacheBuster = Date.now();
+ // const cacheBuster = Date.now();
     //const urlWithCacheBuster = `${apisearch}${cacheBuster}`;
-    const response = await fetch(apisearch,{
+    const response = await fetch('http://localhost:3000/api/home',{
       next: {
         cache: 'no-cache',
-        revalidate: 5
+        revalidate: 0
       }
     })
       

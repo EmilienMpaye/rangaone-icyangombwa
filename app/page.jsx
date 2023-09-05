@@ -19,9 +19,12 @@ const homeApiUrl = process.env.API_HOME_URL;
 
 export const dynamic = 'force-dynamic';
  async function getData(){
-  //http://localhost:3000/api/home
-  const cacheBuster =Date.now();
- const res = await fetch(`${homeApiUrl}??cacheBuster=${cacheBuster}`);
+ const res = await fetch(homeApiUrl, {
+  next: {
+    cache: 'no-cache',
+    revalidate: 0
+  }
+});
    await wait(5);
    return res.json();
  }
