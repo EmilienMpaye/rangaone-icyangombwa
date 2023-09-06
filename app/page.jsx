@@ -12,26 +12,27 @@ import CTA1 from "./components/CTA1";
 
 import Footer from "./components/footer";
 import Delete1 from "./components/deleteTwo";
+import { getAllTodos } from "@lib/mongo/todos";
 
 
 
 const homeApiUrl = process.env.API_HOME_URL;
 
 export const dynamic = 'force-dynamic';
- async function getData(){
- const res = await fetch(homeApiUrl, {
-  next: {
-    cache: 'no-cache',
-    revalidate: 0
-  }
-});
-   await wait(5);
-   return res.json();
- }
+//  async function getData(){
+//  const res = await fetch(homeApiUrl, {
+//   next: {
+//     cache: 'no-cache',
+//     revalidate: 0
+//   }
+// });
+//    await wait(5);
+//    return res.json();
+//  }
 
 const Home = async () => {
- const { todos} = await getData();
-
+ //const { todos} = await getData();
+ const {todos} = await getAllTodos();
  const {todos1} = await getAllTodos1();
   
 

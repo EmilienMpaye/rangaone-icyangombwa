@@ -8,7 +8,7 @@ export async function GET(context){
    const response = NextResponse.json(todos1,{cache: 'no-cache'});
    console.log("home1 data API",response)
   // Add headers to the response.
-  response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app/api/home1');
+  response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app');
  
   return response;
    //return NextResponse.json(todos1);
