@@ -10,7 +10,7 @@ export async function GET(context){
       }
     });
     
-  response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app','Cashe-Control','s-maxage=5');
+  response.headers.set('Cashe-Control','s-maxage=5, stale-while-revalidate');
  
   return response;
    
