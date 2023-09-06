@@ -10,8 +10,8 @@ export async function GET(context){
       }
     });
     
-  response.headers.set('Cashe-Control','s-maxage=5, must-revalidate','X-Content-Type-Options', 'nosniff');
- 
+  response.headers.set('Cashe-Control','s-maxage=5, must-revalidate');
+  response.headers.set('X-Content-Type-Options', 'nosniff');
   return response;
    
    
