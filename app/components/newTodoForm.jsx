@@ -95,7 +95,7 @@ const handleImageChange = (e) => {
             Izina:
           </label>
           <input
-            id="nameInput2"
+            id="nameInput1"
             type="text"
             name="title"
             placeholder="izina riri Kucyangombwa"

@@ -83,13 +83,7 @@ const NewTodoForm1 = () => {
       };
   return (
     <div className='flex flex-col md:flex-row ml-4'>
-         {/* <section className=" md:w-1/2 md:order-first items-center justify-center bg-yellow-500 rounded-sm">
-     <div className="xl:mt-0 text-xl justify-end items-end mr-2">
-   
-    <CTA1/>
       
-    </div> 
-  </section> */}
   <section className="md:w-1/2 md:ml-1 md:mt-0 md:order-last md:rounded-sm md:mr-2">
     <form onSubmit={handleSubmit} ref={formRef}  >
     
