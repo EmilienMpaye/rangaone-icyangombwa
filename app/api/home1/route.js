@@ -1,6 +1,6 @@
 import {  NextResponse } from "next/server";
 import { getAllTodos1} from "@lib/mongo/todos1";
-//export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 export async function GET(context){
    //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
    const todos1 = await getAllTodos1();

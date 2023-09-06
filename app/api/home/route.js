@@ -14,7 +14,7 @@ export async function GET(context){
     
     response.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app');
     response.headers.set('Cashe-Control','s-maxage=5, must-revalidate');
-    response.headers.set('X-Content-Type-Options', 'text/plain');
+    //response.headers.set('X-Content-Type-Options', 'text/plain');
   return response;
    
    

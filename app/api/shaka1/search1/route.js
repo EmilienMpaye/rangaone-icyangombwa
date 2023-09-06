@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
 export async function GET(request) {
-    const origin =request.headers.get('origin');
+    //const origin =request.headers.get('origin');
     try {
        // const cacheBuster = Date.now();
         // const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
@@ -28,7 +28,7 @@ export async function GET(request) {
                 headers:{
                     'Content-Type': 'application/json',
                      "Access-Control-Allow-Credentials": "true",
-                     "Access-Control-Allow-Origin": origin ||"*" ,   
+                     "Access-Control-Allow-Origin": "*" ,   
                 }
                
             }

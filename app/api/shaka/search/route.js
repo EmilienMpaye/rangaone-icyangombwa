@@ -5,7 +5,7 @@ const apisearch = process.env.API_HOME_CACHEBUSTER_URL;
 
 
 export async function GET(request) {
-    const origin =request.headers.get('origin');
+    //const origin =request.headers.get('origin');
     try {
         //const cacheBuster = Date.now();
         //const urlWithCacheBuster = `${apisearch}${cacheBuster}`;
@@ -26,7 +26,7 @@ export async function GET(request) {
                 headers:{
                     'Content-Type': 'application/json',
                      "Access-Control-Allow-Credentials": "true",
-                     "Access-Control-Allow-Origin": origin ||"*" ,   
+                     "Access-Control-Allow-Origin": "*" ,   
                 }
                
             }
