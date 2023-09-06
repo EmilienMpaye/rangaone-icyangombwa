@@ -7,10 +7,10 @@ const apisearch = process.env.API_HOME_CACHEBUSTER_URL;
 export async function GET(request) {
     const origin =request.headers.get('origin');
     try {
-        const cacheBuster = Date.now();
-        const urlWithCacheBuster = `${apisearch}${cacheBuster}`;
+        //const cacheBuster = Date.now();
+        //const urlWithCacheBuster = `${apisearch}${cacheBuster}`;
 
-        const response = await fetch(urlWithCacheBuster);
+        const response = await fetch(apisearch);
     
         const ibyangombwa = await response.json();
 

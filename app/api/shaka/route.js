@@ -5,9 +5,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const homeapi =process.env.API_HOME_URL 
   //const apisearch = process.env.API_HOME_CACHEBUSTER_URL;
- // const cacheBuster = Date.now();
-    //const urlWithCacheBuster = `${apisearch}${cacheBuster}`;
-    
+ 
     const response = await fetch(homeapi,{
       next: {
         cache: 'no-cache',

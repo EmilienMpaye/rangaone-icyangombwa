@@ -5,10 +5,10 @@ const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
 export async function GET(request) {
     const origin =request.headers.get('origin');
     try {
-        const cacheBuster = Date.now();
-         const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
+       // const cacheBuster = Date.now();
+        // const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     
-        const response = await fetch(urlWithCacheBuster)
+        const response = await fetch(apishaka1)
        
       
         console.log("shaka1 search1 route",response);
