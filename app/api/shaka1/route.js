@@ -14,7 +14,7 @@ export async function GET( request) {
   //const origin =request.headers.get('origin');
   const apishaka1 =process.env.API_HOME1_CACHEBUSTER_URL;
     const cacheBuster = Date.now();
-   //const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
+   const urlWithCacheBuster = `${apishaka1}${cacheBuster}`;
     const response = await fetch(urlWithCacheBuster, {
       method:"GET",
       next: {
