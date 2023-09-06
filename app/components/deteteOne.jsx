@@ -13,13 +13,11 @@ async function deleteTodo(id, refresh) {
   
   
   try {
-    // const res ${process.env.NEXT_PUBLIC_DELETE_API_HOME_URL}= await fetch(`http://localhost:3000/api/home/${id}`, {
-    //   method: 'DELETE',NEXT_PUBLIC_DELETE_API_HOME1_URL=http://localhost:3000/api/home1/
-    // });
+    
     const res = await fetch(`${process.env.NEXT_PUBLIC_DELETE_API_HOME_URL}${id}`, {
       method: 'DELETE',
     });
-    //console.log("deleteUrl",res);
+    console.log("deleteUrl",res);
 
     if (res.ok) {
       console.log("Todo deleted successfully");
@@ -65,7 +63,7 @@ export default function Delete({ todo }) {
     toast.success('Byakunze. Siba icyangombwa...', {
       hideProgressBar: false,
       autoClose: 2000,
-      position: 'bottom-right',
+      position: 'top-right',
       pauseOnHover: true,
       theme: 'light',
       draggable: true,

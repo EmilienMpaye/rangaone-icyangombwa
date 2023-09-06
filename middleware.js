@@ -1,6 +1,6 @@
 import {  NextResponse } from "next/server";
 
-// const allowedOrigins = process.env.NODE_ENV === 'production'? 'https://rangaone-icyangombwa.vercel.app' : ['http://localhost:3000','http://localhost:3000/api/*path',"https://www.google.com"];
+// const allowedOrigins = process.env.NODE_ENV === 'production'? '................' : [,'http://localhost:3000/api/*path',"https://www.google.com"];
 
 export function middleware(request){
     console.log('Middleware')
@@ -25,5 +25,5 @@ export function middleware(request){
 //return NextResponse.next()
 // }
 // export const config = {
-//     matcher: ['/api/home1','/api/shaka1', '/api/shaka1/search1','/api/home','/api/shaka','/api/shaka/search'],
+//     matcher: .....
 // }
