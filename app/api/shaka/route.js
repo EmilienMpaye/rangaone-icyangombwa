@@ -16,7 +16,7 @@ export async function GET() {
     if (response.ok) {
       const { todos } = await response.json();
       const data = NextResponse.json({ todos });
-      data.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app','Cashe-Control','s-maxage=5, stale-while-revalidate');
+      data.headers.set('Access-Control-Allow-Origin', 'https://rangaone-icyangombwa.vercel.app','Cashe-Control','s-maxage=5, must-revalidate','X-Content-Type-Options', 'nosniff');
       return data;
     } else {
       // Handle error here

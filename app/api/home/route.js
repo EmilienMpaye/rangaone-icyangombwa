@@ -10,7 +10,7 @@ export async function GET(context){
       }
     });
     
-  response.headers.set('Cashe-Control','s-maxage=5, stale-while-revalidate');
+  response.headers.set('Cashe-Control','s-maxage=5, must-revalidate','X-Content-Type-Options', 'nosniff');
  
   return response;
    
