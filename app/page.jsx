@@ -19,24 +19,12 @@ import { getAllTodos } from "@lib/mongo/todos";
 const homeApiUrl = process.env.API_HOME_URL;
 
 export const dynamic = 'force-dynamic';
-//  async function getData(){
-//  const res = await fetch(homeApiUrl, {
-//   next: {
-//     cache: 'no-cache',
-//     revalidate: 0
-//   }
-// });
-//    await wait(5);
-//    return res.json();
-//  }
 
 const Home = async () => {
  //const { todos} = await getData();
  const {todos} = await getAllTodos();
  const {todos1} = await getAllTodos1();
-  
-
- 
+  console.log("page todoss",todos);
   return (
     <div className="w-full bg-gradient-to-b from-slate-600 to-green-400  ">
       
@@ -60,17 +48,17 @@ const Home = async () => {
 
 
 
- <section className="w-full bg-blue-gradient my-2  rounded-lg">
-  <span style={{ display: 'flex', alignItems: 'center' }} className="bg-yellow-700 justify-center items-center">
-    IBYANGOMBWA BYABONETSE VUBA AHA 
-    <Link href={`/todoss`} passHref className="ml-4 flex-row">
-      <FaSearch size={25} />
+ <section className="w-full   my-2  rounded-lg">
+  <span style={{ display: 'flex', alignItems: 'center' }} className="bg-gradient-to-b from-yellow-600 to-green-400 justify-center items-center font-bold">
+      Ibyangombwa  bitoraguwe vuba aha 
+    <Link href={`/todoss`} passHref className="ml-2 flex-row">
+      <FaSearch size={25} className="text-yellow-900 mt-1" />
     </Link>
   </span>
   <div className="marquee hover:w-full overflow-x-auto ">
-  <div className="flex  flex-nowrap flex-row gap-3  rounded-lg maylike " style={{ width: '100%',overflowX: 'auto', maxHeight: '400px' }}>
+  <div className="flex flex-nowrap flex-row gap-3 p-2 rounded-lg max-h-80  maylike " style={{ width: '100%',overflowX: 'auto', maxHeight: '500px' }}>
     {todos.map((todo) => (
-      <div key={todo._id} className="flex flex-row mb-4 border-2 border-white rounded-xl mr-2 w-auto flex-shrink-0  " style={{ minWidth: '400px', maxWidth: '150%', flexShrink: 1 }}>
+      <div key={todo._id} className="flex flex-row mb-4 border-2 border-white rounded-xl mr-2 w-full sm:w-auto flex-shrink-0 " style={{ minWidth: '400px', maxWidth: '100%', flexShrink: 1 }}>
         {todo.file && (
           <div className="flex flex-col">
             <img src={todo.file} alt="Todo Image" className="h-20 w-40 rounded-sm ml-4 mt-3" />
@@ -106,20 +94,20 @@ const Home = async () => {
 
 
 
-<section className="w-full bg-blue-gradient my-2  rounded-lg ">
+<section className="w-full  my-2  rounded-lg ">
   {/* Render the section with todos1 */}
  
   <span
     style={{ display: "flex", alignItems: "center" }}
-    className="bg-yellow-700 justify-center items-center"
+    className="justify-center items-center bg-gradient-to-b from-yellow-600 to-green-400 font-bold"
   >
-    IBYANGOMBWA BYABONETSE VUBA AHA
+    Ibyangombwa birangwa
     <Link
       href={`/byose`}
       passHref
-      className="ml-4 flex-row"
+      className="ml-2 flex-row"
     >
-      <FaSearch size={25} />
+      <FaSearch size={25} className="text-yellow-900 mt-1" />
     </Link>
   </span>
   <div className="marquee hover:w-full overflow-x-auto">
@@ -135,19 +123,19 @@ const Home = async () => {
               <Delete1 todo={todo} /> 
             </div>
             <div className="ml-7">
-            <h3 className='text-black font-serif text-xl'>Izina:{todo.title} </h3>
-            <p className='text-black font-serif font-semibold '>Ubwoko:{todo.izina}</p>
-            <p className='text-black font-semibold '>Nimero:{todo.nimero}</p>
-            <p className='text-black font-serif font-semibold '>Akarere:{todo.akarere}</p>
-            <p className='text-black font-serif font-semibold '>Uranga:{todo.yourname}</p>
+            <h3 className='text-black   font-semibold'>Izina:<span className="ml-4">{todo.title}</span> </h3>
+            <p className='text-black  font-semibold '>Ubwoko: <span className="  ml-1">{todo.izina}</span> {todo.izina}</p>
+            <p className='text-black  font-semibold '>Nimero: <span className="  ml-1">{todo.nimero}</span>   </p>
+            <p className='text-black  font-semibold '>Akarere:  <span className="  ml-1">{todo.akarere}</span></p>
+            <p className='text-black  font-semibold '>Uranga:   <span className="  ml-1">{todo.yourname}</span></p>
             <div style={{ position: 'relative' }}>
     <p className="text-bold text-black">{todo.comment}</p>
             </div>
             </div>
             {/*  */}
             <div className="flex items-center justify-center mr-7">
-              <a href={`tel:${todo.telephone}`} className="flex items-center">
-                <p className="text-red-500 font-bold">HAMAGARA</p>
+              <a href={`tel:${todo.telephone}`} className="flex items-center ">
+                <p className="text-red-500 font-bold  mr-2">HAMAGARA</p>
                 <FaPhone className="mr-1 text-green-900 ml-2" />
               </a>
               <a href={`sms:${todo.telephone}`} className="flex items-center ml-2">
@@ -163,7 +151,7 @@ const Home = async () => {
   </div>
 </section>
 
-<div className='footer'>
+<div className='footer '>
         <Footer/> 
         </div>
 </div>

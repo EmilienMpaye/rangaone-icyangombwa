@@ -29,7 +29,7 @@ const links =[
  
   return (
   
-        <footer className="w-full text-center flex flex-row footer-container bg-green-700 py-4">
+        <footer className="w-full text-center flex flex-row footer-container  bg-blue-gradient py-4">
           <div className="flex items-center flex-1 font-bold">
     RANGA  URANGISHE
     <span className="ml-2 mr-2">

@@ -240,14 +240,13 @@ a {
 } 
 .maylike{
   display: flex;
-  justify-content: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 @media (max-width: 600px) {
   .maylike.track {
     flex-direction: row;
-    max-height: 200px; /* Adjust the height as needed */
+    max-height: 2000px; /* Adjust the height as needed */
     overflow-x: auto;
   }
 }
@@ -264,6 +263,10 @@ a {
 @media (max-width: 279px) {
   .maylike {
     flex-direction: row;
+  }
+  .maylike > div {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
 }
@@ -690,4 +693,8 @@ input[type="file"] {
   input[type="file"] {
     width: 50%; /* Keep the same width for very small screens */
   }
+}
+.custom-checkbox {
+  width: 17px; /* Set your desired width */
+  height: 17px; /* Set your desired height */
 }
