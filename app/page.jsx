@@ -16,7 +16,7 @@ import { getAllTodos } from "@lib/mongo/todos";
 
 
 
-const homeApiUrl = process.env.API_HOME_URL;
+
 
 export const dynamic = 'force-dynamic';
 
@@ -26,7 +26,8 @@ const Home = async () => {
  const {todos1} = await getAllTodos1();
   console.log("page todoss",todos);
   return (
-    <div className="w-full bg-gradient-to-b from-slate-600 to-green-400  ">
+    
+    <div className="max-w-full  bg-gradient-to-b from-slate-600 to-green-400 ml-0 " style={{ width: '100%',overflowX: 'hidden' }}>
       
       <Rangisha />
   
@@ -48,7 +49,7 @@ const Home = async () => {
 
 
 
- <section className="w-full   my-2  rounded-lg">
+ <section className="w-full  my-2  rounded-lg">
   <span style={{ display: 'flex', alignItems: 'center' }} className="bg-gradient-to-b from-yellow-600 to-green-400 justify-center items-center font-bold">
       Ibyangombwa  bitoraguwe vuba aha 
     <Link href={`/todoss`} passHref className="ml-2 flex-row">

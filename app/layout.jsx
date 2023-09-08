@@ -21,7 +21,7 @@ const RootLayout = ({children}) => {
         </div>
         
       
-      <main className="max-w-full">
+      <main className="max-w-full ">
           {children}
           
         </main>

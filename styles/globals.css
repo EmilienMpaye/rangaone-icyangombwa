@@ -27,7 +27,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Hide horizontal overflow */
+  min-width: 100%;
+  max-width: 250%;
+  overflow-x: hidden;
+  /* Hide horizontal  overflow */
   height: 100%;
   scrollbar-width: thin; /* Set the width of the scrollbar */
  
@@ -38,7 +41,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   box-sizing: border-box; /* Include padding and borders in the element's total width and height */
-  overflow: hidden; 
+  overflow-x: hidden; 
 }
 
 html::-webkit-scrollbar {
@@ -56,6 +59,7 @@ a {
   text-decoration: none;
 }
 .wrapper {
+  min-width: none;
   height: 100%;
 
 }
@@ -94,15 +98,15 @@ a {
 
 
 .main {
-  width: 100vw;
+  width: 100%;
   flex-grow: 1;
   min-height: calc(100vh - 13vh); /* Subtract the height of the footer from the total viewport height */
   position: fixed;
   display: flex;
   justify-content: center;
-  padding: 0px 4px 0px 4px;
+  padding: 0px 0px 0px 0px;
   pointer-events: none;
-  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+ /* Include padding and borders in the element's total width and height */
 }
 
 /* .main:before {
@@ -698,3 +702,14 @@ input[type="file"] {
   width: 17px; /* Set your desired width */
   height: 17px; /* Set your desired height */
 }
+
+.section {
+  width: 100%;
+  max-width: 100%;
+}
+@media (max-width: 100px) {
+  .section {
+    width: 100%;
+  }
+}
+
