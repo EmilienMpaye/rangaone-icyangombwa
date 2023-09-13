@@ -142,6 +142,7 @@ const handleImageChange = (e) => {
             <option value="ruhango">Ruhango</option>
             <option value="Muhanga">Muhanga</option>
             <option value="Rusizi">Rusizi</option>
+            <option value="Nyamagabe">Nyamagabe</option>
             <option value="Nyaruguru">Nyaruguru</option>
             <option value="Nyanza">Nyanza</option>
             <option value="Kamonyi">Kamonyi</option>
