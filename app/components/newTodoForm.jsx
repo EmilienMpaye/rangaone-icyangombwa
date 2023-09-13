@@ -145,6 +145,7 @@ const handleImageChange = (e) => {
             <option value="Nyamagabe">Nyamagabe</option>
             <option value="Nyaruguru">Nyaruguru</option>
             <option value="Nyanza">Nyanza</option>
+            <option value="kigali">Kigali</option>
             <option value="Kamonyi">Kamonyi</option>
           </select>
         </div>
