@@ -125,7 +125,7 @@ const Home = async () => {
             </div>
             <div className="ml-7">
             <h3 className='text-black   font-semibold'>Izina:<span className="ml-4">{todo.title}</span> </h3>
-            <p className='text-black  font-semibold '>Ubwoko: <span className="  ml-1">{todo.izina}</span> {todo.izina}</p>
+            <p className='text-black  font-semibold '>Ubwoko: <span className="  ml-1">{todo.izina}</span></p>
             <p className='text-black  font-semibold '>Nimero: <span className="  ml-1">{todo.nimero}</span>   </p>
             <p className='text-black  font-semibold '>Akarere:  <span className="  ml-1">{todo.akarere}</span></p>
             <p className='text-black  font-semibold '>Uranga:   <span className="  ml-1">{todo.yourname}</span></p>
