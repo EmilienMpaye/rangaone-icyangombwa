@@ -138,7 +138,10 @@ const handleImageChange = (e) => {
             onChange={handleAkarereChange}
           
           >
-            <option value="Nyamagabe">Nyamagabe</option>
+            <option value="Kayonza">kayonza</option>
+            <option value="ruhango">Ruhango</option>
+            <option value="Muhanga">Muhanga</option>
+            <option value="Rusizi">Rusizi</option>
             <option value="Nyaruguru">Nyaruguru</option>
             <option value="Nyanza">Nyanza</option>
             <option value="Kamonyi">Kamonyi</option>
