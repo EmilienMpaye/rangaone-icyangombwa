@@ -146,7 +146,7 @@ const NewTodoForm1 = () => {
       </div>
       <div className="flex items-center mb-4">
         <label htmlFor="fullNameInput2" className="mr-2 font-bold text-white">
-          Izina rya we:
+          Izina ryawe:
         </label>
         <input
           id="fullNameInput1"
@@ -158,7 +158,7 @@ const NewTodoForm1 = () => {
       </div>
       <div className="flex items-center mb-4">
         <label htmlFor="fullNameInput2" className="mr-2 font-bold text-white">
-          Telephone yawe:
+          Telephone:
         </label>
         <input
           id="fullNameInput2"

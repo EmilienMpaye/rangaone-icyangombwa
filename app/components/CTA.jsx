@@ -3,8 +3,8 @@ import Button from './Button';
 import styles from '@app/constants/style';
 
 const CTA = () => (
-  <section className="container1 ml-4 ">
-    <div className="flex-1 flex flex-col md:flex-row colm ">
+  <section className="container1 ml-3  ">
+    <div className="flex-1 flex flex-col md:flex-row  ">
       <div className="md:w-2/3">
         <h2 className={styles.heading2}>WATAYE ICYANGOMBWA?</h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-2`}>

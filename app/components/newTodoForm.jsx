@@ -90,8 +90,8 @@ const handleImageChange = (e) => {
   <section className='md:w-1/2 md:ml-2 md:mt-0 md:order-last md:rounded-sm md:mr-2 '>
     <form   onSubmit={handleSubmit} ref={formRef} >
       <div className="flex flex-col md:flex-col  ">
-        <div className="flex items-center mb-4 mt-4 md:mr-4">
-          <label htmlFor="nameInput2" className="mr-2 font-bold text-white">
+        <div className="flex items-center mb-4 mt-4 md:mr-2">
+          <label htmlFor="nameInput2" className="mr-1 font-bold text-white">
             Izina:
           </label>
           <input
@@ -99,7 +99,7 @@ const handleImageChange = (e) => {
             type="text"
             name="title"
             placeholder="izina riri Kucyangombwa"
-            className="px-2 py-1 ml-8 rounded-md border-2  bg-gray-500 border-slate-900 text-black"
+            className="px-1 py-1 ml-4 rounded-md border-2  bg-gray-500 border-slate-900 text-black"
           />
         </div>
         <div className="flex items-center mb-4">
@@ -111,7 +111,7 @@ const handleImageChange = (e) => {
             type="text"
             name="izina"
             placeholder="Ubwoko bw&apos;icyangombwa"
-            className="px-2 py-1 rounded-md border-2 ml-5 bg-gray-500 border-slate-900 text-black"
+            className="px-2 py-1 rounded-md border-2 ml-3 bg-gray-500 border-slate-900 text-black"
           />
         </div>
         <div className="flex items-center mb-4 md:mr-1">
@@ -138,7 +138,7 @@ const handleImageChange = (e) => {
             onChange={handleAkarereChange}
           
           >
-            <option value="">Nyamagabe</option>
+            <option value="Nyamagabe">Nyamagabe</option>
             <option value="Nyaruguru">Nyaruguru</option>
             <option value="Nyanza">Nyanza</option>
             <option value="Kamonyi">Kamonyi</option>
@@ -146,7 +146,7 @@ const handleImageChange = (e) => {
         </div>
         <div className="flex items-center mb-4 ">
           <label htmlFor="telephoneInput2" className="mr-1 font-bold text-white">
-            Telephone yawe:
+            Telephone:
           </label>
           <input 
             id="imagez"
