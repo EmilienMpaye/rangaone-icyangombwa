@@ -85,7 +85,7 @@ const handleImageChange = (e) => {
 
 
   return (
-    <div className=' ml-3 '>
+    <div className='flex ml-3 form-container '>
      
   <section className='md:w-1/2 md:ml-2 md:mt-0 md:order-last md:rounded-sm md:mr-2 '>
     <form   onSubmit={handleSubmit} ref={formRef} >

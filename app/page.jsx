@@ -35,12 +35,12 @@ const Home = async () => {
       {/* <CustomScrollbar/> */}
 <section className="w-full ">
   <div className="flex flex-col md:flex-row">
-    <div className=" flex flex-col sm:flex-col md:flex-col lg:flex-row md:ml-4  w-full md:w-1/2">
+    <div className=" flex flex-col sm:flex-col md:flex-col lg:flex-row   w-full md:w-1/2">
       <CTA />
       <NewTodoForm />
     </div>
 
-    <div className=" flex flex-col sm:flex-col md:flex-col lg:flex-row w-full md:w-1/2">
+    <div className=" flex flex-col sm:flex-col md:flex-col lg:flex-row  w-full md:w-1/2">
       <CTA1 />
       <NewTodoForm1 />
     </div>

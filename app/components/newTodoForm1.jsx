@@ -35,7 +35,7 @@ const NewTodoForm1 = () => {
       try {
         await create(formData1);
         console.log('Form Data:', formData1);
-        toast.success("form submitted");
+        toast.success("form Yoherejwe!");
         formRef.current.reset();     
       } catch (error) {
         console.log('Error submitting form:', error);
@@ -61,7 +61,7 @@ const NewTodoForm1 = () => {
             toast.error('Uzuza form yose!', {
               hideProgressBar: false,
               autoClose: 2000,
-              position: 'bottom-right',
+              position: 'top-right',
               pauseOnHover: true,
               theme: 'light',
               draggable: true,
@@ -82,12 +82,12 @@ const NewTodoForm1 = () => {
         setAkarereValue(e.target.value);
       };
   return (
-    <div className='flex flex-col md:flex-row ml-4'>
+    <div className='flex ml-3 form-container '>
       
-  <section className="md:w-1/2 md:ml-1 md:mt-0 md:order-last md:rounded-sm md:mr-2">
+  <section className="md:w-1/2 md:ml-2 md:mt-0 md:order-last md:rounded-sm md:mr-2">
     <form onSubmit={handleSubmit} ref={formRef}  >
     
-    <div className="flex flex-col md:flex-col ">
+    <div className="flex flex-col md:flex-col mr-6 ">
     
       <div className="flex items-center mt-4 mb-4 md:mr-4">
         <label htmlFor="nameInput2" className="mr-2 font-bold text-white">
