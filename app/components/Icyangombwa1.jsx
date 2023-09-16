@@ -61,7 +61,7 @@ export default function Icyangombwa1({icyangombwa1}) {
       
     )}
  
- <div className='w-full footer '>
+ <div className='w-full footer-container '>
         <Footer/> 
         </div> 
   </div>

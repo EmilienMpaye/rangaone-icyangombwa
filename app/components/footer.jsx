@@ -28,16 +28,17 @@ const links =[
  ]
  
   return (
-  
-        <footer className="w-full text-center flex flex-row footer-container  bg-blue-gradient py-4">
-          <div className="flex items-center flex-1 font-bold">
+    
+        <footer className="w-full  flex flex-col  py-4">
+          <div className="flex items-center justify-center text-white  flex-1 font-bold">
     RANGA  URANGISHE
     <span className="ml-2 mr-2">
       <Image src={emil} alt="rwanda1" style={{height:"20", width:"25"}} 
-      className=" w-12 h-12   border-2 border-black rounded-full mt-1 mr-2 " />
+      className=" w-12 h-12   border-2 border-black rounded-full mt-1  " />
     </span>
     ICYANGOMBWA HANO
   </div>
+  <div className="border-2 border-yellow-500 flex items-center justify-center">
        <ul className="flex flex-row space-x-2 gap-10 ">
        {links.map(({
         id,child,href
@@ -51,6 +52,8 @@ const links =[
         </li>
        ))}
        </ul>
+       </div>
+       <p className="flex justify-end items-end ml-2 text-slate-700 font-bold">&copy; 2023 Ranga Limited</p>
         </footer>
     
   )

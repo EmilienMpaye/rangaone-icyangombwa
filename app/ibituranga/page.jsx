@@ -96,7 +96,7 @@ const ContactForm = () => {
           </div>
       </div>
     </div>
-    <div className='footer'>
+    <div className='w-full footer-container bg-blue-gradient'>
         <Footer/> 
         </div> 
     </div>

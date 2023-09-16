@@ -23,7 +23,7 @@ const ICYANGOMBWA = ({icyangombwa}) => {
       <div className="marquee hover:w-full overflow-x-auto flex-grow">
       <div className="flex  flex-wrap flex-row gap-3  rounded-lg maylike " style={{ width: '100%',overflowX: 'auto', maxHeight: '100%' }}>
         {icyangombwa.map((todo) => (
-          <div key={todo._id} className="flex flex-row mb-4 border-2 border-green-500 rounded-xl mr-2 w-auto flex-shrink-0  " style={{ minWidth: '400px', maxWidth: '150%', flexShrink: 1 }}>
+          <div key={todo._id} className="flex flex-row mb-4 border-2 border-green-500 rounded-xl mr-2 w-auto flex-shrink-0  " style={{ minWidth: '404px', maxWidth: '150%', flexShrink: 1 }}>
             {todo.file && (
               <div className="flex flex-col">
                 <img src={todo.file} alt="Todo Image" className="h-20 w-40 rounded-sm ml-4 mt-3" />
@@ -63,7 +63,7 @@ const ICYANGOMBWA = ({icyangombwa}) => {
       </p>
       
     )}
- <div className='w-full footer '>
+ <div className='w-full  footer-container'>
         <Footer/> 
         </div> 
   </div>

@@ -32,7 +32,7 @@ const Ukodukora = () => {
   
  
 </div>
-<div  className="w-full footer">
+<div  className="w-full footer-container bg-blue-gradient">
         <Footer/> 
         </div> 
 </div>

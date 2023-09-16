@@ -63,13 +63,27 @@ a {
   height: 100%;
 
 }
-.footer {
+/* .footer {
   height: 15%;
+  position: sticky;
+  margin-bottom: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background: silver;
+} */
+
+@media only screen and (max-width: 987px) {
+  .footer {
+    height: auto;
+    position: relative;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 }
+
 .header {
   height: 15%;
 }
@@ -180,15 +194,8 @@ a {
   align-items: center;
   gap: 6px;
   justify-content: center;
-  height: 20vh;
-  /* position: sticky; /* or position: fixed */
-  /* bottom: 0;
-  left: 0;
-  right: 0; 
-  Remove the right: 0; property 
-  /* right: 0; */
-  /* Remove the position: bottom; property */
-   position: bottom; 
+  
+   
   /* Add this line to make the footer behave normally in the document flow */
 }
 
@@ -694,38 +701,10 @@ a {
 }
 /* Default input width for larger screens */
 /* Default input width for all screens */
-input[type="file"] {
-  width: 70%; /* Adjust this value as needed */
-}
 
-/* Media queries for adjusting input width */
-@media screen and (max-width: 600px) {
-  input[type="file"] {
-    width: 40%; /* Keep the same width for smaller screens */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  input[type="file"] {
-    width: 30%; /* Keep the same width for middle screens */
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  input[type="file"] {
-    width: 30%; /* Keep the same width for larger screens */
-  }
-}
-
-/* Additional media query for very small screens */
-@media screen and (max-width: 300px) and(max-width:500px) {
-  input[type="file"] {
-    width: 50%; /* Keep the same width for very small screens */
-  }
-}
 .custom-checkbox {
   width: 17px; /* Set your desired width */
-  height: 17px; /* Set your desired height */
+  height: 17px;
 }
 
 .section {
@@ -758,3 +737,33 @@ input[type="file"] {
     max-width: 400px; /* Adjust the max-width as needed */
   }
 }
+
+
+
+
+
+ @media screen and (max-width: 600px) {
+ input[type="file"]  {
+  display: flex;
+  box-sizing: border-box;
+  width: 90%; 
+} 
+  }
+
+@media screen and (max-width: 768px) {
+  input[type="file"] {
+    width: 50%; 
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  input[type="file"] {
+    width: 50%; 
+  }
+}
+
+@media screen and (min-width: 300px) and(max-width:500px) {
+  input[type="file"] {
+    width: 30%; 
+  }
+}  

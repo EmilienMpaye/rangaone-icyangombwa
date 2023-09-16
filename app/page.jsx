@@ -152,7 +152,7 @@ const Home = async () => {
   </div>
 </section>
 
-<div className='footer '>
+<div className='footer footer-container bg-blue-gradient'>
         <Footer/> 
         </div>
 </div>
